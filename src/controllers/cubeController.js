@@ -23,7 +23,7 @@ router.post('/create', (req, res) => {
 });
 
 router.get('/details/:id', (req,res)=>{
-    const cube = cubeService.getOne(req.params._id);
+    const cube = cubeService.getOne(req.params.id);
     res.render('details', {cube});
 })
 

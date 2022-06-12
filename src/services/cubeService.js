@@ -5,7 +5,7 @@ const cubes = require('../db.json');
 exports.getOne = (cubeId) =>cubes[cubeId];
 
 exports.save = (cube) =>{
-    cubes.push(cube);
+    cubes.push({_id: cubes[cubes.length -1 ]._id + 1, ...cubes});
     let data = JSON.stringify(cubes, '',4);
     return fs.writeFile(path.resolve('src','db.json'),data ,{encoding: 'utf-8'})
 }
